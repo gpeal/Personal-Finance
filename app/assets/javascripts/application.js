@@ -15,6 +15,5 @@
 //= require turbolinks
 //= require_tree ./libs
 //= require_tree ./plugins
-//= require_tree ./charts
 //= require_tree ./demo
-//= require_tree .
+//= require application-base-admin
