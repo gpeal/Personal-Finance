@@ -11,6 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20131014062253) do
+
+  create_table "data_points", force: true do |t|
+    t.integer "security_id"
+    t.integer "data_type_id"
+    t.hstore  "data"
+  end
+
+  create_table "data_types", force: true do |t|
+    t.string "name"
+    t.string "description"
+  end
+
+  create_table "securities", force: true do |t|
+    t.string "ticker"
+    t.string "name"
+    t.string "description"
+  end
 
 end
