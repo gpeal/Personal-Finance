@@ -10,6 +10,8 @@ gem 'haml-rails', '~> 0.4'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem "resque", "~> 1.25.1", github: "resque/resque", branch: '1-x-stable'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
