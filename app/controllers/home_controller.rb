@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    Resque.enqueue(TestTask, 5)
+    Task.for_type("TestTask").enqueue(a: 'a', b: 'c')
   end
 
 end

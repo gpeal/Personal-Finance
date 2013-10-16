@@ -1,6 +1,7 @@
 class TestTask
-  @queue = :q
-  def self.perform(id)
-    puts "Running task with id: " + id
+  include Resque::Base
+
+  def perform(args)
+    log("Running task with args " + args['b'])
   end
 end

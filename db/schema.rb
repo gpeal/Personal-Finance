@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014062253) do
+ActiveRecord::Schema.define(version: 20131015042242) do
 
   create_table "data_points", force: true do |t|
     t.integer "security_id"
@@ -28,6 +28,23 @@ ActiveRecord::Schema.define(version: 20131014062253) do
     t.string "ticker"
     t.string "name"
     t.string "description"
+  end
+
+  create_table "task_statuses", force: true do |t|
+    t.string "status"
+  end
+
+  create_table "task_types", force: true do |t|
+    t.string "name"
+    t.string "description"
+    t.string "queue",       default: "q"
+    t.string "klass"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer "task_status_id", default: 1
+    t.integer "task_type_id"
+    t.hstore  "info"
   end
 
 end

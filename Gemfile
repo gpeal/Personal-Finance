@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem "resque", "~> 1.25.1", github: "resque/resque", branch: '1-x-stable'
+gem 'resque-web', require: 'resque_web', github: 'resque/resque-web'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -19,6 +20,11 @@ gem 'unicorn'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'pry'
+  gem 'pry-debugger'
 end
 
 # Use ActiveModel has_secure_password
