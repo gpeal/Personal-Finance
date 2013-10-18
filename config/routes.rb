@@ -3,6 +3,12 @@ PersonalFinance::Application.routes.draw do
   root 'home#index'
   mount ResqueWeb::Engine => "/resque_web"
 
+  namespace :api do
+    namespace :v1 do
+      resources :tasks, only: [:index]
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

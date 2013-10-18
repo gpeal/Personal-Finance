@@ -7,6 +7,10 @@ class Task < ActiveRecord::Base
     create(task_type: task_type)
   end
 
+  def as_json(options)
+    super(only: [:info], include: [:task_type, :task_status])
+  end
+
   def enqueue(*args)
     Kernel.const_get(task_type.klass).create(id: self.id, args: args)
   end
