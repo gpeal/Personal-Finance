@@ -1,0 +1,124 @@
+!!!
+%html
+  %head
+    %title Personal Finance
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = yield :css
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = yield :js
+    = csrf_meta_tags
+    %nav.navbar.navbar-inverse{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %i.icon-cog
+          %a.navbar-brand{href: "./index.html"} Base Admin 3.0
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "javscript:;"}
+                %i.icon-cog
+                Settings
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "./account.html"} Account Settings
+                %li
+                  %a{href: "javascript:;"} Privacy Settings
+                %li.divider
+                %li
+                  %a{href: "javascript:;"} Help
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "javscript:;"}
+                %i.icon-user
+                Rod Howard
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "javascript:;"} My Profile
+                %li
+                  %a{href: "javascript:;"} My Groups
+                %li.divider
+                %li
+                  %a{href: "javascript:;"} Logout
+          %form.navbar-form.navbar-right{role: "search"}
+            .form-group
+              %input.form-control.input-sm.search-query{placeholder: "Search", type: "text"}/
+    .subnavbar
+      .subnavbar-inner
+        .container
+          %a.subnav-toggle{"data-target" => ".subnav-collapse", "data-toggle" => "collapse", href: "javascript:;"}
+            %span.sr-only Toggle navigation
+            %i.icon-reorder
+          .collapse.subnav-collapse
+            %ul.mainnav
+              %li.active
+                %a{href: "./index.html"}
+                  %i.icon-home
+                  %span Home
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "javascript:;"}
+                  %i.icon-th
+                  %span Components
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{href: "./elements.html"} Elements
+                  %li
+                    %a{href: "./forms.html"} Form Styles
+                  %li
+                    %a{href: "./jqueryui.html"} jQuery UI
+                  %li
+                    %a{href: "./charts.html"} Charts
+                  %li
+                    %a{href: "./popups.html"} Popups/Notifications
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "javascript:;"}
+                  %i.icon-copy
+                  %span Sample Pages
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{href: "./pricing.html"} Pricing Plans
+                  %li
+                    %a{href: "./faq.html"} FAQ's
+                  %li
+                    %a{href: "./gallery.html"} Gallery
+                  %li
+                    %a{href: "./reports.html"} Reports
+                  %li
+                    %a{href: "./account.html"} User Account
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "javascript:;"}
+                  %i.icon-external-link
+                  %span Extra Pages
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{href: "./login.html"} Login
+                  %li
+                    %a{href: "./signup.html"} Signup
+                  %li
+                    %a{href: "./error.html"} Error
+                  %li.dropdown-submenu
+                    %a{href: "#", tabindex: "-1"} More options
+                    %ul.dropdown-menu
+                      %li
+                        %a{href: "#", tabindex: "-1"} Second level
+                      %li
+                        %a{href: "#"} Second level
+                      %li
+                        %a{href: "#"} Second level
+  %body
+    = yield
+  %footer
+    .footer
+      .container
+        .row
+          #footer-copyright.col-md-6
+            \© 2012-13 Jumpstart UI.
+          / /span6
+          #footer-terms.col-md-6
+            Theme by
+            %a{href: "http://jumpstartui.com", target: "_blank"} Jumpstart UI
