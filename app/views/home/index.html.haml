@@ -70,51 +70,12 @@
             %table.table.table-striped.table-bordered
               %thead
                 %tr
+                  %th ID
                   %th Task
                   %th.td-actions
               %tbody
-                %tr
-                  %td
-                    Internet
-                    Explorer 4.0
-                  %td.td-actions
-                    %a.btn.btn-xs.btn-primary{href: "javascript:;"}
-                      %i.btn-icon-only.icon-ok
-                %tr
-                  %td
-                    Internet
-                    Explorer 5.0
-                  %td.td-actions
-                    %a.btn.btn-xs.btn-primary{href: "javascript:;"}
-                      %i.btn-icon-only.icon-ok
-                %tr
-                  %td
-                    Internet
-                    Explorer 5.5
-                  %td.td-actions
-                    %a.btn.btn-xs.btn-primary{href: "javascript:;"}
-                      %i.btn-icon-only.icon-ok
-                %tr
-                  %td
-                    Internet
-                    Explorer 5.5
-                  %td.td-actions
-                    %a.btn.btn-xs.btn-primary{href: "javascript:;"}
-                      %i.btn-icon-only.icon-ok
-                %tr
-                  %td
-                    Internet
-                    Explorer 5.5
-                  %td.td-actions
-                    %a.btn.btn-xs.btn-primary{href: "javascript:;"}
-                      %i.btn-icon-only.icon-ok
-                %tr
-                  %td
-                    Internet
-                    Explorer 5.5
-                  %td.td-actions
-                    %a.btn.btn-xs.btn-primary{href: "javascript:;"}
-                      %i.btn-icon-only.icon-ok
+                -@tasks.each do |task|
+                  =render partial: "task", locals: {task: task}
         .widget.stacked
           .widget-header
             %i.icon-bookmark

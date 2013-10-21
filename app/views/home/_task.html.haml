@@ -1,0 +1,19 @@
+%tr
+  %td
+    =task.id
+  %td
+    =task.type.description
+  %td.td-actions
+    =link_to(task, class: "btn btn-xs btn-primary") do
+      -if task.created?
+        %i.btn-icon-only.icon-plus-sign-alt
+      - elsif task.queued?
+        %i.btn-icon-only.icon-time
+      -elsif task.in_progress?
+        %i.btn-icon-only.icon-gears
+      -elsif task.failed?
+        %i.btn-icon-only.icon-exclamation-sign
+      -elsif task.succeeded?
+        %i.btn-icon-only.icon-check-sign
+      -else
+        %i.btn-icon-only.icon-question-sign

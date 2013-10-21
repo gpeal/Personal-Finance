@@ -3,6 +3,8 @@ PersonalFinance::Application.routes.draw do
   root 'home#index'
   mount ResqueWeb::Engine => "/resque_web"
 
+  resources :tasks, only: [:show]
+
   namespace :api do
     namespace :v1 do
       resources :tasks, only: [:index]

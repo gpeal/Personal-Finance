@@ -1,0 +1,12 @@
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Time
+      %th Message
+  -@task.get_log.reverse.each do |t|
+    %tbody
+      %tr
+        %td
+          =t["time"]
+        %td
+          =t["msg"]
