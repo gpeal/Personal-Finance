@@ -1,3 +1,7 @@
+= javascript_tag do
+  = "window.closingPriceUrl = '#{api_v1_security_closing_prices_path}.json'"
+= javascript_include_tag "securities/show", "data-turbolinks-track" => true
+
 .main
   .container
     .row
@@ -7,4 +11,3 @@
           %h3 Historical Performance
         .widget-content
           #security-historical-chart.chart-holder
-            ="#{@security.closing_prices.length} points"

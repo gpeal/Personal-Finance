@@ -9,7 +9,7 @@ PersonalFinance::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :tasks, only: [:index]
-      resources :securities, only: [:show]
+      get '/securities/:id/closing_prices', to: 'securities#closing_prices', as: :security_closing_prices
     end
   end
 

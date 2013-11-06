@@ -18,7 +18,7 @@ class Security < ActiveRecord::Base
 
   def update_closing_prices
     start_date = closing_prices.order(:date).last.date rescue Date.new(2005, 1, 1)
-    history = YahooStock::History.new(stock_symbol: 'yhoo', start_date: start_date, end_date: Date.today - 1)
+    history = YahooStock::History.new(stock_symbol: ticker, start_date: start_date, end_date: Date.today - 1)
     results = history.results(:to_hash)
     output = results.output
     output.each do |price|
