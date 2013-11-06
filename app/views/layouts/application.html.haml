@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Personal Finance
+    %title=@title || "Personal Finance"
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = yield :css
     = javascript_include_tag "application", "data-turbolinks-track" => true

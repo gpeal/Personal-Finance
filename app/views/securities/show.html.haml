@@ -1,0 +1,10 @@
+.main
+  .container
+    .row
+      .widget.stacked
+        .widget-header
+          %i.icon-signal
+          %h3 Historical Performance
+        .widget-content
+          #security-historical-chart.chart-holder
+            ="#{@security.closing_prices.length} points"

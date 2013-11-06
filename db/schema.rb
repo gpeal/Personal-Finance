@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015042242) do
+ActiveRecord::Schema.define(version: 20131106050632) do
+
+  create_table "closing_prices", force: true do |t|
+    t.float   "price"
+    t.date    "date"
+    t.integer "security_id"
+  end
+
+  add_index "closing_prices", ["security_id"], name: "index_closing_prices_on_security_id", using: :btree
 
   create_table "data_points", force: true do |t|
     t.integer "security_id"
@@ -25,8 +33,8 @@ ActiveRecord::Schema.define(version: 20131015042242) do
   end
 
   create_table "securities", force: true do |t|
-    t.string "ticker"
-    t.string "name"
+    t.string "ticker",      null: false
+    t.string "name",        null: false
     t.string "description"
   end
 

@@ -13,7 +13,7 @@ postgresql-contrib:
     pkg:
         - installed
         - require:
-                - pkg: postgresql
+            - pkg: postgresql
 
 pg_hba.conf:
     file.managed:
@@ -27,9 +27,10 @@ pg_hba.conf:
 
 db_user:
     postgres_user.present:
-        - name: caesar
+        - name: finance
         - password: password
         - createdb: True
+        - superuser: True
         - user: postgres
         - require:
             - pkg: postgresql

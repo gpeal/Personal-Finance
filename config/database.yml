@@ -6,10 +6,11 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: <%= ENV["FINANCE_DB_NAME_DEVELOPMENT"] %>
+  database: finance_development
   pool: 5
-  username: <%= ENV["FINANCE_DB_USER"] %>
-  password: <%= ENV["FINANCE_DB_PASSWORD"] %>
+  username: finance
+  password: password
+  template: template0
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,15 +18,17 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: <%= ENV["FINANCE_DB_NAME_TEST"] %>
+  database: finance_test
   pool: 5
-  username: <%= ENV["FINANCE_DB_USER"] %>
-  password: <%= ENV["FINANCE_DB_PASSWORD"] %>
+  username: finance
+  password: password
+  template: template0
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: <%= ENV["FINANCE_DB_NAME_PRODUCTION"] %>
+  database: finance_production
   pool: 5
-  username: <%= ENV["FINANCE_DB_USER"] %>
-  password: <%= ENV["FINANCE_DB_PASSWORD"] %>
+  username: finance
+  password: password
+  template: template0
