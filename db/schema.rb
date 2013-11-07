@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20131106050632) do
 
   create_table "tasks", force: true do |t|
     t.integer "task_status_id", default: 1
-    t.integer "task_type_id"
+    t.integer "task_type_id",               null: false
     t.hstore  "info"
   end
 

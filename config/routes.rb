@@ -1,6 +1,8 @@
 PersonalFinance::Application.routes.draw do
 
   root 'home#index'
+  get '/scrape', to: 'home#scrape'
+  ResqueWeb::Engine.eager_load!
   mount ResqueWeb::Engine => "/resque_web"
 
   resources :tasks, only: [:show]

@@ -9,4 +9,6 @@
         %td
           =t["time"]
         %td
-          =t["msg"]
+          -t["msg"].split("\n").each do |msg|
+            =msg
+            %br

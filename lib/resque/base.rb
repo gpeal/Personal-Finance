@@ -33,7 +33,7 @@ module Resque
       @task.succeeded
     rescue => e
       log(e.message)
-      log(e.backtrace.inspect)
+      log(Rails.backtrace_cleaner.clean(e.backtrace).to_s.gsub(',', "\n"))
       @task.failed
     end
 

@@ -31,6 +31,10 @@ group :development do
   gem 'pry-debugger'
 end
 
+gem 'watir'
+gem 'watir-webdriver'
+gem 'headless'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

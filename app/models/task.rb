@@ -28,7 +28,7 @@ class Task < ActiveRecord::Base
   end
 
   def log(msg)
-    time = DateTime.parse(Time.now.to_s).strftime("%d/%m/%Y %H:%M")
+    time = DateTime.parse(Time.now.to_s).strftime("%Y/%m/%d %H:%M")
     log_msg = {time: time, msg: msg.to_s}.to_json
     File.open(Rails.root.join('log', 'task_' + self.id.to_s + '.log'), 'a') do |f|
       f.puts log_msg + ","
@@ -74,6 +74,6 @@ class Task < ActiveRecord::Base
   end
 
   def failed?
-    status == TaskStatus.where(status: "in progress").first
+    status == TaskStatus.where(status: "failed").first
   end
 end
